@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee "
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="226dp"
+        android:layout_height="120dp"
+        android:background="@drawable/logo" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="317dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <EditText
+            android:id="@+id/txtNome"
+            android:layout_width="350dp"
+            android:layout_height="44dp"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Nome"
+            android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="350dp"
+            android:layout_height="44dp"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <EditText
+            android:id="@+id/txtSenha"
+            android:layout_width="350dp"
+            android:layout_height="44dp"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Senha"
+            android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#09857E"
+            android:text="Cadastrar"
+            app:cornerRadius="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Legato</string>
+    <string name="col1">Todos</string>
+    <string name="col2">Cifras</string>
+    <string name="col3">Tablaturas</string>
+    <string name="col4">Partituras</string>
+    <string name="row1Nome">Exemplo</string>
+    <string name="row1Cifras">Exemplo</string>
+    <string name="row1Tablaturas">Exemplo</string>
+    <string name="open">Open navigation</string>
+    <string name="close">Close navigation</string>
+</resources>
