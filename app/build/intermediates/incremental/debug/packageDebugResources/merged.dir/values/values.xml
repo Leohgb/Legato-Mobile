@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="colorGreen">#09857E</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Legato</string>
+    <string name="close">Close navigation</string>
+    <string name="col1">Todos</string>
+    <string name="col2">Cifras</string>
+    <string name="col3">Tablaturas</string>
+    <string name="col4">Partituras</string>
+    <string name="open">Open navigation</string>
+    <string name="row1Cifras">Exemplo</string>
+    <string name="row1Nome">Exemplo</string>
+    <string name="row1Tablaturas">Exemplo</string>
+    <style name="Base.Theme.Legato" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Legato" parent="Base.Theme.Legato"/>
+</resources>
