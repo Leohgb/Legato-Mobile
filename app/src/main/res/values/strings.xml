@@ -9,4 +9,9 @@
     <string name="row1Tablaturas">Exemplo</string>
     <string name="open">Open navigation</string>
     <string name="close">Close navigation</string>
+    <string name="selectType">Selecione o Tipo</string>
+    <string name="selectAfinacao">Selecione a Afinação</string>
+    <string name="selectDificuldade">Selecione a Dificuldade</string>
+    <string name="selectCapo">Selecione a Capo</string>
+
 </resources>

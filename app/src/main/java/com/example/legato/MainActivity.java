@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnEntrar = findViewById(R.id.btnEntrar);
 
         btnEntrar.setOnClickListener(e->{
-            Intent intent = new Intent(MainActivity.this, Cadastro.class);
+            Intent intent = new Intent(MainActivity.this, upload_transcricao.class);
             startActivity(intent);
         });
     }

@@ -25,6 +25,8 @@
         <activity android:name=".Home"/>
         <activity android:name=".comunidade"/>
         <activity android:name=".perfil"/>
+        <activity android:name=".upload_transcricao"/>
+
     </application>
 
 </manifest>
