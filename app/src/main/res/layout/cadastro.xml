@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eeeeee "
+    android:background="#EAE8E7"
     android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/id_legato_i"
         android:layout_width="226dp"
         android:layout_height="120dp"
         android:background="@drawable/logo" />
@@ -31,9 +31,9 @@
             android:layout_height="10dp" />
 
         <EditText
-            android:id="@+id/txtNome"
+            android:id="@+id/id_nome_pt"
             android:layout_width="350dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:hint="Nome"
@@ -44,9 +44,9 @@
             android:layout_height="10dp" />
 
         <EditText
-            android:id="@+id/txtEmail"
+            android:id="@+id/id_email_pt"
             android:layout_width="350dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:hint="Email"
@@ -57,9 +57,9 @@
             android:layout_height="10dp" />
 
         <EditText
-            android:id="@+id/txtSenha"
+            android:id="@+id/id_senha_pt"
             android:layout_width="350dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
             android:hint="Senha"
@@ -70,7 +70,7 @@
             android:layout_height="15dp" />
 
         <Button
-            android:id="@+id/btnCadastrar"
+            android:id="@+id/id_cadastrar_b"
             android:layout_width="100pt"
             android:layout_height="wrap_content"
             android:backgroundTint="#09857E"

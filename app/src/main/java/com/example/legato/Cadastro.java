@@ -13,7 +13,7 @@ public class Cadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro);
 
-        Button btnCadastro = findViewById(R.id.btnCadastrar);
+        Button btnCadastro = findViewById(R.id.id_cadastrar_b);
 
         btnCadastro.setOnClickListener(e->{
             Intent intent = new Intent(Cadastro.this,Tabela.class);

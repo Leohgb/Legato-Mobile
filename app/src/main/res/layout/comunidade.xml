@@ -10,7 +10,10 @@
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/border_type"
+        android:backgroundTint="#009688"
         android:text="Conheça nossas comunidades"
+        android:textColor="#FFFBFB"
         android:textSize="18dp" />
 
     <androidx.fragment.app.FragmentContainerView
@@ -25,14 +28,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/id_dis_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Discussões" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/id_dis_rel_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -50,7 +53,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/id_tit_dis_a_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="35dp"
@@ -59,7 +62,7 @@
             android:text="Titulo da discussão" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/id_com_env_a_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -67,7 +70,7 @@
             android:text="Em comunidades enviado User por" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/id_definir_a_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -84,7 +87,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/id_tit_dis_b_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="35dp"
@@ -93,7 +96,7 @@
             android:text="Titulo da discussão" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/id_com_env_b_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -101,7 +104,7 @@
             android:text="Em comunidades enviado User por" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/id_definir_b_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -118,7 +121,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/id_tit_dis_c_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="35dp"
@@ -127,7 +130,7 @@
             android:text="Titulo da discussão" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/id_com_env_c_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -135,7 +138,7 @@
             android:text="Em comunidades enviado User por" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/id_definir_c_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
