@@ -1,11 +1,15 @@
 package com.example.legato;
 
+import android.app.Activity;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,8 +29,9 @@ public class upload_transcricao extends AppCompatActivity {
     ArrayAdapter<String> adapterItems2;
     ArrayAdapter<String> adapterItems3;
     ArrayAdapter<String> adapterItems4;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.upload_transcricao);
 
@@ -39,7 +44,7 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: "+item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -52,7 +57,7 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: "+item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -65,7 +70,7 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: "+item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -78,8 +83,29 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: "+item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    int requestcode = 1;
+
+    public void onActivityResult(int requestcode, int resulCode, Intent data) {
+        super.onActivityResult(requestcode, resulCode, data);
+        Context context = getApplicationContext();
+        if (requestcode == requestcode && resulCode == Activity.RESULT_OK) {
+            if (data == null) {
+                return;
+            }
+            Uri uri = data.getData();
+            Toast.makeText(context, uri.getPath(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void openfilechooser(View view) {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        startActivityForResult(intent,requestcode);
+    }
+
 }
