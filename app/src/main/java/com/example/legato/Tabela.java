@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class Tabela extends Fragment {
@@ -18,6 +17,6 @@ public class Tabela extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.tabela, container, false);
+        return inflater.inflate(R.layout.tabela_l, container, false);
     }
 }

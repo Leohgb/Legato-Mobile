@@ -13,7 +13,7 @@ import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class upload_transcricao extends AppCompatActivity {
+public class Upload_transcricao extends AppCompatActivity {
 
     String[] item = {"Material", "Design", "Components", "Android", "5.0"};
     String[] item2 = {"Design", "Material", "Components", "Android", "5.0"};
@@ -33,10 +33,10 @@ public class upload_transcricao extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.upload_transcricao);
+        setContentView(R.layout.upload_transcricao_l);
 
         autoCompleteTextView = findViewById(R.id.auto_Complete_txt);
-        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item, item);
+        adapterItems = new ArrayAdapter<String>(this, R.layout.list_item_l, item);
 
         autoCompleteTextView.setAdapter(adapterItems);
 
@@ -44,12 +44,12 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
         autoCompleteTextView2 = findViewById(R.id.auto_Complete_txt2);
-        adapterItems2 = new ArrayAdapter<String>(this, R.layout.list_item, item2);
+        adapterItems2 = new ArrayAdapter<String>(this, R.layout.list_item_l, item2);
 
         autoCompleteTextView2.setAdapter(adapterItems2);
 
@@ -57,12 +57,12 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
         autoCompleteTextView3 = findViewById(R.id.auto_Complete_txt3);
-        adapterItems3 = new ArrayAdapter<String>(this, R.layout.list_item, item3);
+        adapterItems3 = new ArrayAdapter<String>(this, R.layout.list_item_l, item3);
 
         autoCompleteTextView3.setAdapter(adapterItems3);
 
@@ -70,12 +70,12 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
 
         autoCompleteTextView4 = findViewById(R.id.auto_Complete_txt4);
-        adapterItems4 = new ArrayAdapter<String>(this, R.layout.list_item, item4);
+        adapterItems4 = new ArrayAdapter<String>(this, R.layout.list_item_l, item4);
 
         autoCompleteTextView4.setAdapter(adapterItems4);
 
@@ -83,7 +83,7 @@ public class upload_transcricao extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Upload_transcricao.this, "Item: " + item, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -11,7 +11,7 @@ public class Cadastro extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro);
+        setContentView(R.layout.cadastro_l);
 
         Button btnCadastro = findViewById(R.id.id_cadastrar_b);
 

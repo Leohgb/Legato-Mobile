@@ -23,9 +23,9 @@
         </activity>
         <activity android:name=".Cadastro"/>
         <activity android:name=".Home"/>
-        <activity android:name=".comunidade"/>
-        <activity android:name=".perfil"/>
-        <activity android:name=".upload_transcricao"/>
+        <activity android:name=".Comunidade"/>
+        <activity android:name=".Perfil"/>
+        <activity android:name=".Upload_transcricao"/>
 
     </application>
 
