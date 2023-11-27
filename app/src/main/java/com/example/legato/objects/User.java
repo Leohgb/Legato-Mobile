@@ -1,6 +1,7 @@
 package com.example.legato.objects;
 
 public class User {
+    private String id;
     private String nome;
     private String email;
     private String senha;
@@ -11,7 +12,8 @@ public class User {
 
     }
 
-    public User(String nome, String email, String senha, String accountType) {
+    public User( String id, String nome, String email, String senha, String accountType) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -21,6 +23,13 @@ public class User {
     public User(String email, String senha) {
         this.email = email;
         this.senha = senha;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNome() {

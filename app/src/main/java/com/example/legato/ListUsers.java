@@ -32,10 +32,11 @@ public class ListUsers extends AppCompatActivity {
         recyclerView = findViewById(R.id.userList);
         database = FirebaseDatabase.getInstance().getReference("users");
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
 
         list = new ArrayList<>();
-        usuarioAdapter = new UsuarioAdapter(this, list);
+        usuarioAdapter = new UsuarioAdapter(this, list,database);
         recyclerView.setAdapter(usuarioAdapter);
 
         // Adicionando um divisor entre os itens da lista (opcional)

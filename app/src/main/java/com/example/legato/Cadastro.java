@@ -64,33 +64,39 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-        }
+    }
     private void salvar() {
         User c = new User();
         c.setNome(txtNome.getText().toString());
         c.setEmail(txtEmail.getText().toString());
         c.setSenha(txtPassword.getText().toString());
-        lista.add(c);
 
         // Adiciona o usuário ao nó "users"
         String userId = databaseReference.push().getKey(); // Cria uma chave única para o usuário
-        databaseReference.child(userId).setValue(c)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
 
-                        Toast.makeText(getApplicationContext(), "Sucesso ao salvar no Firebase", Toast.LENGTH_SHORT).show();
-                    }
+        // Verifica se userId não é nulo antes de atribuir ao id do usuário
+        if (userId != null) {
+            c.setId(userId);
+        } else {
+            // Lidar com a situação em que userId é nulo (pode ocorrer em condições excepcionais)
+            Log.e(APP_LEGATO, "Erro: userId é nulo");
+            return; // Não continue com o processo de salvamento
+        }
+
+        DatabaseReference userRef = databaseReference.child(userId);
+
+        // Log antes de salvar
+        Log.i(APP_LEGATO, "Salvando usuário: " + c.getNome() + ", " + c.getEmail());
+
+        userRef.setValue(c)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(getApplicationContext(), "Usuário cadastrado com sucesso", Toast.LENGTH_SHORT).show();
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "Falha ao salvar no Firebase", Toast.LENGTH_SHORT).show();
-                    }
+                .addOnFailureListener(e -> {
+                    Toast.makeText(getApplicationContext(), "Falha ao cadastrar usuário", Toast.LENGTH_SHORT).show();
+                    Log.e(APP_LEGATO, "Erro ao cadastrar usuário", e);
                 });
     }
 
-
-    }
-
+}
 
