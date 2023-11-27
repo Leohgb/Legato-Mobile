@@ -26,7 +26,8 @@
         <activity android:name=".Comunidade"/>
         <activity android:name=".Perfil"/>
         <activity android:name=".Upload_transcricao"/>
-
+        <activity android:name=".Tabela" />
+        <activity android:name=".ListUsers" />
     </application>
 
 </manifest>

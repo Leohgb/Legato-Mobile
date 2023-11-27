@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "68060732407",
+    "firebase_url": "https://legato-86544-default-rtdb.firebaseio.com",
     "project_id": "legato-86544",
     "storage_bucket": "legato-86544.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:68060732407:android:a19d007091945c5ec32cf2",
+        "mobilesdk_app_id": "1:68060732407:android:742a892cf767f7c7c32cf2",
         "android_client_info": {
           "package_name": "com.example.legato"
         }

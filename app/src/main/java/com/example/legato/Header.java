@@ -19,4 +19,7 @@ public class Header extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         return inflater.inflate(R.layout.header_l, container, false);
     }
+
+    public static class ListUsuarios {
+    }
 }

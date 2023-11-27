@@ -90,10 +90,12 @@ public class Upload_transcricao extends AppCompatActivity {
 
     int requestcode = 1;
 
-    public void onActivityResult(int requestcode, int resulCode, Intent data) {
-        super.onActivityResult(requestcode, resulCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
         Context context = getApplicationContext();
-        if (requestcode == requestcode && resulCode == Activity.RESULT_OK) {
+
+        if (requestCode == requestcode && resultCode == Activity.RESULT_OK) {
             if (data == null) {
                 return;
             }

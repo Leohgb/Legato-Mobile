@@ -1,7 +1,7 @@
 
 plugins {
     id 'com.android.application'
-
+    id 'com.google.gms.google-services'
 }
 
 
@@ -10,7 +10,6 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mongodb.example-realm-application"
         applicationId "com.example.legato"
         minSdk 28
         targetSdk 34
@@ -31,10 +30,14 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+apply plugin: 'com.google.gms.google-services'
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:32.6.0')
+    implementation("com.google.firebase:firebase-database")
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
+    implementation("com.google.firebase:firebase-auth")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.code.gson:gson:2.8.8")
