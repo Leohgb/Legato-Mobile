@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68060732407",
+    "project_id": "legato-86544",
+    "storage_bucket": "legato-86544.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68060732407:android:a19d007091945c5ec32cf2",
+        "android_client_info": {
+          "package_name": "com.example.legato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68060732407-h829josk9o06blvetcjih3t82ggsc2g4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEEFwId07SS_ttyLxerrqVb6ieTbKJBCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68060732407-h829josk9o06blvetcjih3t82ggsc2g4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
