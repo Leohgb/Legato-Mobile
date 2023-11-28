@@ -17,5 +17,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, Cadastro_Artista.class);
             startActivity(intent);
         });
+
+
     }
 }

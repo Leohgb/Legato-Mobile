@@ -1,0 +1,39 @@
+<!-- res/layout/menu_bottom.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/car_ui_color_accent"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Início"
+        />
+
+
+    <Button
+        android:id="@+id/btnBusca"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Busca" />
+
+    <Button
+        android:id="@+id/btnComunidade"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Comunidades" />
+
+    <Button
+        android:id="@+id/btnMais"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Mais" />
+
+</LinearLayout>
