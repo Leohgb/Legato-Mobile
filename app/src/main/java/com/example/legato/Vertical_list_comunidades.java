@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Vertical_list extends Fragment {
+public class Vertical_list_comunidades extends Fragment {
     @Nullable
     @Override
     public View onCreateView(
@@ -17,6 +17,6 @@ public class Vertical_list extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.vertical_l, container, false);
+        return inflater.inflate(R.layout.vertical_list_comunidades_l, container, false);
     }
 }

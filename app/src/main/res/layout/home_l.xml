@@ -36,7 +36,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView4"
-            android:name="com.example.legato.Vertical_list"
+            android:name="com.example.legato.Vertical_list_artists"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -54,9 +54,9 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView5"
-            android:name="com.example.legato.Horizontal_list"
+            android:name="com.example.legato.Vertical_list_comunidades"
             android:layout_width="match_parent"
-            android:layout_height="178dp" />
+            android:layout_height="wrap_content" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/bottomMenu"
