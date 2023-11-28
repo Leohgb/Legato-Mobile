@@ -133,9 +133,6 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     public int getItemCount() {
         return list.size();
     }
-    private void editUser(String userId) {
-
-    }
 
     private void deleteUser(String userId) {
         // Make sure userId is not null or empty

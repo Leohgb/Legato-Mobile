@@ -1,5 +1,6 @@
 package com.example.legato;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -76,6 +77,8 @@ public class Cadastro extends AppCompatActivity {
 
         // Verifica se userId não é nulo antes de atribuir ao id do usuário
         if (userId != null) {
+            Intent intent = new Intent(Cadastro.this, ListUsers.class);
+            startActivity(intent);
             c.setId(userId);
         } else {
             // Lidar com a situação em que userId é nulo (pode ocorrer em condições excepcionais)

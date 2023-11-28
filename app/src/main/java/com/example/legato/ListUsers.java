@@ -32,7 +32,7 @@ public class ListUsers extends AppCompatActivity {
         recyclerView = findViewById(R.id.userList);
         database = FirebaseDatabase.getInstance().getReference("users");
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         list = new ArrayList<>();

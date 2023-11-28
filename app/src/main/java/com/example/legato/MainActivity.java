@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnEntrar = findViewById(R.id.btnEntrar);
 
         btnEntrar.setOnClickListener(e->{
-            Intent intent = new Intent(MainActivity.this, ListUsers.class);
+            Intent intent = new Intent(MainActivity.this, Cadastro_Artista.class);
             startActivity(intent);
         });
     }
