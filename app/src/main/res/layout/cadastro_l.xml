@@ -32,7 +32,7 @@
 
         <EditText
             android:id="@+id/id_nome_pt"
-            android:layout_width="350dp"
+            android:layout_width="280dp"
             android:layout_height="48dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
@@ -45,7 +45,7 @@
 
         <EditText
             android:id="@+id/id_email_pt"
-            android:layout_width="350dp"
+            android:layout_width="280dp"
             android:layout_height="48dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
@@ -58,7 +58,7 @@
 
         <EditText
             android:id="@+id/id_senha_pt"
-            android:layout_width="350dp"
+            android:layout_width="280dp"
             android:layout_height="48dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"

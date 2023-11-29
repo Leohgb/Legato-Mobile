@@ -29,7 +29,7 @@ public class ListArtists extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.artistas);
 
-        recyclerView = findViewById(R.id.postList);
+        recyclerView = findViewById(R.id.artistsList);
         database = FirebaseDatabase.getInstance().getReference("artists");
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

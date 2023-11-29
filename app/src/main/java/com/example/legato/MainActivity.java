@@ -11,13 +11,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnEntrar = findViewById(R.id.btnEntrar);
-
-        btnEntrar.setOnClickListener(e->{
-            Intent intent = new Intent(MainActivity.this, Cadastro_Post.class);
+        Button btnCadastro = findViewById(R.id.btnEntrar);
+        Button btnEntrar = findViewById(R.id.idEntrar);
+        btnCadastro.setOnClickListener(e->{
+            Intent intent = new Intent(MainActivity.this, Cadastro.class);
             startActivity(intent);
         });
 
+        btnEntrar.setOnClickListener(e->{
+            Intent intent = new Intent(MainActivity.this, Entrar.class);
+            startActivity(intent);
+        });
 
     }
 }

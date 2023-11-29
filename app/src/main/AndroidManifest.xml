@@ -24,6 +24,7 @@
         <activity android:name=".Cadastro"/>
         <activity android:name=".Cadastro_Artista"/>
         <activity android:name=".Cadastro_Post"/>
+        <activity android:name=".Entrar"/>
         <activity android:name=".Home"/>
         <activity android:name=".Comunidade"/>
         <activity android:name=".Perfil"/>
