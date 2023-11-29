@@ -39,7 +39,7 @@ public class ListUsers extends AppCompatActivity {
         usuarioAdapter = new UsuarioAdapter(this, list,database);
         recyclerView.setAdapter(usuarioAdapter);
 
-        // Adicionando um divisor entre os itens da lista (opcional)
+        // Adicionando um divisor entre os itens da lista
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         database.addValueEventListener(new ValueEventListener() {
@@ -55,7 +55,6 @@ public class ListUsers extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Lidar com erros de leitura do Firebase Database, se necessário
             }
         });
     }

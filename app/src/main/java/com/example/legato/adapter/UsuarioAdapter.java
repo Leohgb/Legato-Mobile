@@ -49,8 +49,10 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        // Obtém o usuário na posição fornecida pelo RecyclerView
         User user = list.get(position);
 
+        // Define os textos dos TextViews na instância de UsuarioViewHolder com as informações do usuário
         holder.Nome.setText(user.getNome());
         holder.Email.setText(user.getEmail());
         holder.Password.setText(user.getSenha());
@@ -93,8 +95,10 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
                             map.put("nome", nome.getText().toString());
                             map.put("email", email.getText().toString());
                             map.put("senha", password.getText().toString());
+                            // Obtém a chave única do usuário na posição atual
                             String userKey = list.get(position).getId();
 
+                            // Atualiza as informações do usuário no Firebase Realtime Database
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(userKey).updateChildren(map)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -139,6 +143,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
         if (userId != null && !userId.isEmpty()) {
             DatabaseReference userRef = databaseReference.child(userId);
 
+            //Remove o usuario
             userRef.removeValue()
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
