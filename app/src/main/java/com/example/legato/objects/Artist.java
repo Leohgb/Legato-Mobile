@@ -10,7 +10,6 @@ public class Artist {
 
     }
 
-
     public Artist(String id, String nome, int idade, String genero, String biografia) {
         this.id = id;
         this.nome = nome;

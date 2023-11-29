@@ -40,8 +40,6 @@ public class Cadastro extends AppCompatActivity {
 
         Button btnCadastro = findViewById(R.id.id_cadastrar_b);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("this is the path");
-
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
 

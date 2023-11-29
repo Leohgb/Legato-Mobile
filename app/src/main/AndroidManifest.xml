@@ -23,12 +23,14 @@
         </activity>
         <activity android:name=".Cadastro"/>
         <activity android:name=".Cadastro_Artista"/>
+        <activity android:name=".Cadastro_Post"/>
         <activity android:name=".Home"/>
         <activity android:name=".Comunidade"/>
         <activity android:name=".Perfil"/>
         <activity android:name=".Upload_transcricao"/>
         <activity android:name=".Tabela" />
         <activity android:name=".ListArtists" />
+        <activity android:name=".ListPost" />
         <activity android:name=".ListUsers" />
     </application>
 
