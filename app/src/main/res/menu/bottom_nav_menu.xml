@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Home"
+        android:id="@+id/btnHome"
+        android:icon="@drawable/baseline_home_24"
+         />
+    <item
+        android:title="Busca"
+        android:id="@+id/btnBusca"
+        android:icon="@drawable/baseline_search_24"
+        />
+    <item
+        android:title="Comunidades"
+        android:id="@+id/btnComunidades"
+        android:icon="@drawable/baseline_groups_24"
+        />
+    <item
+        android:title="Configurações"
+        android:id="@+id/btnMais"
+        android:icon="@drawable/baseline_settings_24"/>
+</menu>
