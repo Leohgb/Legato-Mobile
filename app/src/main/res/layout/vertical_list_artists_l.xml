@@ -26,7 +26,8 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                style="@style/paddingVertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView1"
@@ -39,8 +40,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
-                    android:text="Nome do Artista" />
+                    android:layout_marginStart="10dp"
+                    android:text="Nome do Artista"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Space
@@ -54,7 +56,8 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                style="@style/paddingVertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView2"
@@ -67,8 +70,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
-                    android:text="Nome do Artista" />
+                    android:layout_marginStart="10dp"
+                    android:text="Nome do Artista"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Space
@@ -82,7 +86,8 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                style="@style/paddingVertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView3"
@@ -95,8 +100,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
-                    android:text="Nome do Artista" />
+                    android:layout_marginStart="10dp"
+                    android:text="Nome do Artista"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Space
@@ -110,7 +116,8 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                style="@style/paddingVertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView4"
@@ -123,8 +130,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="8dp"
-                    android:text="Nome do Artista" />
+                    android:layout_marginStart="10dp"
+                    android:text="Nome do Artista"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

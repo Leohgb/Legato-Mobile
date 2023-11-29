@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import android.widget.Button;
 import android.content.Intent;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class BottomMenu extends Fragment {
 
@@ -23,50 +25,29 @@ public class BottomMenu extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.menu_bottom, container, false);
 
+        BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_nav_menu);
 
-        Button btnHome = view.findViewById(R.id.btnHome);
-        Button btnBusca = view.findViewById(R.id.btnBusca);
-        Button btnComunidade = view.findViewById(R.id.btnComunidade);
-        Button btnMais = view.findViewById(R.id.btnMais);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
 
-
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("BottomMenu", "Botão Home");
-
-                Intent intent = new Intent(getActivity(), Home.class);
-                startActivity(intent);
-
-            }
-        });
-
-
-        btnBusca.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("BottomMenu", "Botão Busca");
-
-            }
-        });
-
-        btnComunidade.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Exemplo: Iniciar uma nova atividade
-                Log.d("BottomMenu", "Botão Comunidade");
-                Intent intent = new Intent(getActivity(), Comunidade.class);
-                startActivity(intent);
-            }
-        });
-
-        btnMais.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("BottomMenu", "Botão Mais");
+            if (itemId == R.id.btnHome) {
+                startActivity(new Intent(getActivity(), Home.class));
+                return true;
+            } else if (itemId == R.id.btnBusca) {
+                // Faça algo relacionado à busca
+                return true;
+            } else if (itemId == R.id.btnComunidades) {
+                startActivity(new Intent(getActivity(), Comunidade.class));
+                return true;
+            } else if (itemId == R.id.btnMais) {
+                // Faça algo relacionado a "Mais"
+                return true;
+            } else {
+                return false;
             }
         });
 
         return view;
     }
 }
+
