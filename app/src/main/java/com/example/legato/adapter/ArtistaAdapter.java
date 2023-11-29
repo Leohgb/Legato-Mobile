@@ -37,7 +37,7 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ArtistaV
     public ArtistaAdapter(Context context, List<Artist> list, DatabaseReference databaseReference) {
         this.context = context;
         this.list = list;
-        this.databaseReference = databaseReference; // Initialize the DatabaseReference
+        this.databaseReference = databaseReference;
     }
 
     @NonNull
@@ -58,7 +58,6 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ArtistaV
         holder.btnEditArtist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Use the activity context, not the context from the View
                 Context activityContext = null;
 
                 if (v.getContext() instanceof Activity) {

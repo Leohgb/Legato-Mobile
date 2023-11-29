@@ -59,7 +59,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.btnEditPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Use the activity context, not the context from the View
                 Context activityContext = null;
 
                 if (v.getContext() instanceof Activity) {
@@ -127,8 +126,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.btnDeletePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implement the logic to delete the user
-                deletePost(post.getId()); // Pass the user ID to the deleteUser method
+                deletePost(post.getId());
             }
         });
     }
@@ -138,7 +136,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     }
 
     private void deletePost(String postId) {
-        // Make sure userId is not null or empty
         if (postId != null && !postId.isEmpty()) {
             DatabaseReference postRef = databaseReference.child(postId);
 
@@ -157,7 +154,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                         }
                     });
         } else {
-            // Handle the case where userId is null or empty
             Log.e("PostagemAdapter", "Error: postId is null or empty");
         }
     }

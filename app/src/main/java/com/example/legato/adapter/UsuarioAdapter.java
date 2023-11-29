@@ -37,7 +37,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     public UsuarioAdapter(Context context, List<User> list, DatabaseReference databaseReference) {
         this.context = context;
         this.list = list;
-        this.databaseReference = databaseReference; // Initialize the DatabaseReference
+        this.databaseReference = databaseReference;
     }
 
     @NonNull
@@ -59,7 +59,6 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
         holder.btnEditUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Use the activity context, not the context from the View
                 Context activityContext = null;
 
                 if (v.getContext() instanceof Activity) {
@@ -128,8 +127,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
         holder.btnDeleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implement the logic to delete the user
-                deleteUser(user.getId()); // Pass the user ID to the deleteUser method
+                deleteUser(user.getId());
             }
         });
     }
