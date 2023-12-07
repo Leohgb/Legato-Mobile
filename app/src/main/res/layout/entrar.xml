@@ -4,6 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/txtCadastros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastros"
+        android:textSize="25dp"
+        android:textColor="@color/colorGreen"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
     <Button
         android:id="@+id/btnCadastramentoPostagem"
         android:layout_width="wrap_content"
@@ -11,8 +20,10 @@
         android:layout_gravity="center"
         android:backgroundTint="#09847E"
         android:gravity="center"
+        android:layout_marginTop="80dp"
         android:text="Cadastro de Postagens"
         android:textColorHighlight="#FFFFFF" />
+
 
     <Button
         android:id="@+id/btnCadastramentoArtista"
@@ -23,4 +34,16 @@
         android:gravity="center"
         android:text="Cadastro de Artistas"
         android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btnCadastramentoMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#09847E"
+        android:gravity="center"
+        android:text="Cadastro de Musicas"
+        android:textAlignment="center" />
+
+
 </LinearLayout>

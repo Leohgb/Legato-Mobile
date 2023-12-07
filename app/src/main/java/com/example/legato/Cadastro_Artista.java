@@ -36,7 +36,7 @@ public class Cadastro_Artista extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("artists");
 
-        txtNome = findViewById(R.id.txtNomeArtista);
+        txtNome = findViewById(R.id.txtNomeMusic);
         txtBiografia = findViewById(R.id.txtBiografiaArtista);
         txtIdade = findViewById(R.id.txtIdadeArtista);
         txtGenero = findViewById(R.id.txtGeneroArtista);
