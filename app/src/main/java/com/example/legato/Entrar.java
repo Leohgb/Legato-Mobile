@@ -14,6 +14,7 @@ public class Entrar extends AppCompatActivity {
         Button btnCadastro = findViewById(R.id.btnCadastramentoPostagem);
         Button btnEntrar = findViewById(R.id.btnCadastramentoArtista);
 
+
         btnCadastro.setOnClickListener(e->{
             Intent intent = new Intent(Entrar.this, Cadastro_Post.class);
             startActivity(intent);
