@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="#09847E"
         android:gravity="center"
-        android:text="Cadastro Postagem"
+        android:text="Cadastro de Postagens"
         android:textColorHighlight="#FFFFFF" />
 
     <Button
@@ -18,7 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:backgroundTint="#09847E"
         android:gravity="center"
-        android:text="Cadastro Artista"
+        android:text="Cadastro de Artistas"
         android:textAlignment="center" />
 </LinearLayout>

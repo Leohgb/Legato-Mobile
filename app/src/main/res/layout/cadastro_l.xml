@@ -73,7 +73,7 @@
             android:id="@+id/id_cadastrar_b"
             android:layout_width="100pt"
             android:layout_height="wrap_content"
-            android:backgroundTint="#09857E"
+            android:backgroundTint="#09847E"
             android:text="Cadastrar"
             app:cornerRadius="4dp" />
 
