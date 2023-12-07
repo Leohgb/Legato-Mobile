@@ -10,56 +10,65 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Nome" />
+        android:text="Nome"
+        android:layout_marginTop="100dp"/>
 
     <EditText
         android:id="@+id/txtNomeMusic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="Nome da Musica"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Idade" />
+        android:text="Ano" />
 
     <EditText
-        android:id="@+id/txtIdadeArtista"
+        android:id="@+id/txtAnoLancamMusic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="Ano de Lançamento da Musica"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textView26"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Biografia" />
+        android:text="Genero" />
 
     <EditText
-        android:id="@+id/txtBiografiaArtista"
+        android:id="@+id/txtGeneroMusic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="Genero Musical"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Genero" />
+        android:text="Album" />
 
     <EditText
-        android:id="@+id/txtGeneroArtista"
+        android:id="@+id/txtAlbumMusic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:hint="ALbum da Musica"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/btnSalvarArtista"
