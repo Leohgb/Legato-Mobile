@@ -24,7 +24,7 @@
         android:text="Nome" />
 
     <EditText
-        android:id="@+id/txtMusicaNomeUpdate"
+        android:id="@+id/txtMusicName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,45 +34,59 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Idade" />
+        android:text="Ano de Lançamento" />
 
     <EditText
-        android:id="@+id/txtMusicaIdadeUpdate"
+        android:id="@+id/txtAnoLancamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="date" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Genero" />
+        android:text="Gênero" />
 
     <EditText
-        android:id="@+id/txtMusicaGenero"
+        android:id="@+id/txtGenre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/txtArtistaBiografi"
+        android:id="@+id/txtAlbum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Biografia" />
+        android:text="Álbum" />
 
     <EditText
-        android:id="@+id/txtArtistaBiografia"
+        android:id="@+id/txtAlbumName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/txtComposer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Compositor" />
+
+    <EditText
+        android:id="@+id/txtComposerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text" />
 
     <Button
-        android:id="@+id/btnAtualizarArtista"
+        android:id="@+id/btnAtualizarMusica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF9800"
