@@ -85,7 +85,8 @@ public class Cadastro_Artista extends AppCompatActivity {
     int idade = Integer.parseInt(idadeStr);
 
     // Create Artist object
-    Artist c = new Artist();
+
+        
     c.setNome(nome);
     c.setBiografia(biografia);
     c.setIdade(idade);
