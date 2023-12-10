@@ -33,6 +33,8 @@
         <activity android:name=".ListArtists" />
         <activity android:name=".ListPost" />
         <activity android:name=".ListUsers" />
+        <activity android:name=".ListMusics" />
+        <activity android:name=".Cadastro_Music"/>
     </application>
 
 </manifest>
