@@ -15,8 +15,8 @@ public class Vertical_list_musics extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater,
             @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState){
+            @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        return inflater.inflate(R.layout.vertical_list_artists_l, container, false);
+        return inflater.inflate(R.layout.vertical_list_musics_l, container, false);
     }
 }

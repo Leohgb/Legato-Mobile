@@ -10,17 +10,17 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.legato.objects.Artist;
+import com.example.legato.objects.Music;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Cadastro_Music extends AppCompatActivity {
+public class Cadastro_Musica extends AppCompatActivity {
     private static final String APP_LEGATO = "APP_LEGATO";
     FirebaseAuth mAuth;
     EditText txtNome;
-    EditText txtIdade;
-    EditText txtBiografia;
+    EditText txtAnoLancamento;
+    EditText txtCompositor;
     EditText txtGenero;
 
     Button btnSalvar;
@@ -29,67 +29,80 @@ public class Cadastro_Music extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_artista);
+        setContentView(R.layout.cadastro_musica);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("this is the path");
+        databaseReference = FirebaseDatabase.getInstance().getReference("this_is_the_path_for_music");
 
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference("artists");
+        databaseReference = FirebaseDatabase.getInstance().getReference("musics");
 
-        txtNome = findViewById(R.id.txtNomeMusic);
-        txtBiografia = findViewById(R.id.txtBiografiaArtista);
-        txtIdade = findViewById(R.id.txtIdadeArtista);
-        txtGenero = findViewById(R.id.txtGeneroArtista);
+        txtNome = findViewById(R.id.txtNomeMusica);
+        txtAnoLancamento = findViewById(R.id.txtAnoLancamentoMusica);
+        txtCompositor = findViewById(R.id.txtCompositorMusica);
+        txtGenero = findViewById(R.id.txtGeneroMusica);
 
-        btnSalvar = findViewById(R.id.btnSalvarArtista);
+        btnSalvar = findViewById(R.id.btnSalvarMusica);
 
         btnSalvar.setOnClickListener(e -> salvar());
 
-        // Adicione um listener para verificar quando a autenticação é concluída
         mAuth.addAuthStateListener(auth -> {
             if (auth.getCurrentUser() != null) {
-                // A autenticação foi concluída, agora você pode obter o token
                 String token = auth.getCurrentUser().getIdToken(true).getResult().getToken();
                 Log.i(APP_LEGATO, "TOKEN : " + token);
             } else {
-                // O usuário não está autenticado, token é nulo
                 Log.i(APP_LEGATO, "TOKEN : null");
             }
         });
-
     }
-    private void salvar() {
-        Artist c = new Artist();
-        c.setNome(txtNome.getText().toString());
-        c.setBiografia(txtBiografia.getText().toString());
-        c.setIdade(Integer.parseInt(txtIdade.getText().toString()));
-        c.setGenero(txtGenero.getText().toString());
-        // Adiciona o artista ao nó "users"
-        String artistId = databaseReference.push().getKey(); // Cria uma chave única para o artista
 
-        // Verifica se userId não é nulo antes de atribuir ao id do artista
-        if (artistId != null) {
-            Intent intent = new Intent(Cadastro_Music.this, ListArtists.class);
-            startActivity(intent);
-            c.setId(artistId);
-        } else {
-            // Lidar com a situação em que artistId é nulo (pode ocorrer em condições excepcionais)
-            Log.e(APP_LEGATO, "Erro: artistId é nulo");
-            return; // Não continue com o processo de salvamento
+    private void salvar() {
+        Music music = new Music();
+
+        String nome = txtNome.getText().toString().trim();
+        String anoLancamentoStr = txtAnoLancamento.getText().toString().trim();
+        String compositor = txtCompositor.getText().toString().trim();
+        String genero = txtGenero.getText().toString().trim();
+
+        if (nome.isEmpty() || anoLancamentoStr.isEmpty() || compositor.isEmpty() || genero.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+            return;
         }
 
-        DatabaseReference artistRef = databaseReference.child(artistId);
+        if (!anoLancamentoStr.matches("\\d+")) {
+            Toast.makeText(getApplicationContext(), "Ano de lançamento inválido", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        // Log antes de salvar
-        Log.i(APP_LEGATO, "Salvando artista: " + c.getNome()+ ", "+c.getGenero()+", "+c.getBiografia()+", "+c.getIdade());
+        int anoLancamento = Integer.parseInt(anoLancamentoStr);
 
-        artistRef.setValue(c)
+        music.setMusicName(nome);
+        music.setAnoLancamento(anoLancamento);
+        music.setComposer(compositor);
+        music.setGenre(genero);
+
+        String musicId = databaseReference.push().getKey();
+
+        if (musicId != null) {
+            Intent intent = new Intent(Cadastro_Musica.this, ListMusics.class);
+            startActivity(intent);
+            music.setId_music(musicId);
+        } else {
+            Log.e(APP_LEGATO, "Erro: musicId é nulo");
+            return;
+        }
+
+        DatabaseReference musicRef = databaseReference.child(musicId);
+
+        Log.i(APP_LEGATO, "Salvando música: " + music.getMusicName() + ", " + music.getGenre() +
+                ", " + music.getComposer() + ", " + music.getAnoLancamento());
+
+        musicRef.setValue(music)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(getApplicationContext(), "Artista cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Música cadastrada com sucesso", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(getApplicationContext(), "Falha ao cadastrar artista", Toast.LENGTH_SHORT).show();
-                    Log.e(APP_LEGATO, "Erro ao cadastrar artista", e);
+                    Toast.makeText(getApplicationContext(), "Falha ao cadastrar música", Toast.LENGTH_SHORT).show();
+                    Log.e(APP_LEGATO, "Erro ao cadastrar música", e);
                 });
     }
 }
