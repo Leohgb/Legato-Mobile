@@ -17,7 +17,7 @@ import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.legato.R;
-import com.example.legato.objects.Artist;
+import com.example.legato.objects.Music;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -29,12 +29,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ArtistaViewHolder> {
+public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaViewHolder> {
     private Context context;
-    private List<Artist> list;
+    private List<Music> list;
     private DatabaseReference databaseReference;
 
-    public MusicAdapter(Context context, List<Artist> list, DatabaseReference databaseReference) {
+    public MusicaAdapter(Context context, List<Music> list, DatabaseReference databaseReference) {
         this.context = context;
         this.list = list;
         this.databaseReference = databaseReference;
@@ -42,20 +42,21 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ArtistaViewH
 
     @NonNull
     @Override
-    public ArtistaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_artistas, parent, false);
-        return new ArtistaViewHolder(view);
+    public MusicaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_musicas, parent, false);
+        return new MusicaViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MusicAdapter.ArtistaViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Artist artist = list.get(position);
+    public void onBindViewHolder(@NonNull MusicaAdapter.MusicaViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Music music = list.get(position);
 
-        holder.Nome.setText(artist.getNome());
-        holder.Idade.setText(String.valueOf(artist.getIdade()));
-        holder.Biografia.setText(artist.getBiografia());
-        holder.Genero.setText(artist.getGenero());
-        holder.btnEditArtist.setOnClickListener(new View.OnClickListener() {
+        holder.musicName.setText(music.getMusicName());
+        holder.genre.setText(music.getGenre());
+        holder.album.setText(music.getAlbum());
+        holder.composer.setText(music.getComposer());
+
+        holder.btnEditMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context activityContext = null;
@@ -68,23 +69,23 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ArtistaViewH
 
                 if (activityContext != null) {
                     final DialogPlus dialogPlus = DialogPlus.newDialog(activityContext)
-                            .setContentHolder(new ViewHolder(R.layout.artist_update_popup))
+                            .setContentHolder(new ViewHolder(R.layout.music_update_popup))
                             .setExpanded(true, 700)
                             .create();
 
                     View view = dialogPlus.getHolderView();
 
-                    EditText nome = view.findViewById(R.id.txtArtistaNomeUpdate);
-                    EditText idade = view.findViewById(R.id.txtArtistaIdadeUpdate);
-                    EditText genero = view.findViewById(R.id.txtArtistaGenero);
-                    EditText biografia = view.findViewById(R.id.txtArtistaBiografia);
+                    EditText musicName = view.findViewById(R.id.txtMusicNameUpdate);
+                    EditText genre = view.findViewById(R.id.txtMusicGenreUpdate);
+                    EditText album = view.findViewById(R.id.txtMusicAlbumUpdate);
+                    EditText composer = view.findViewById(R.id.txtMusicComposerUpdate);
 
-                    Button btnUpdate = view.findViewById(R.id.btnAtualizarArtista);
+                    Button btnUpdate = view.findViewById(R.id.btnUpdateMusic);
 
-                    nome.setText(artist.getNome());
-                    idade.setText(String.valueOf(artist.getIdade()));
-                    biografia.setText(artist.getBiografia());
-                    genero.setText(artist.getGenero());
+                    musicName.setText(music.getMusicName());
+                    genre.setText(music.getGenre());
+                    album.setText(music.getAlbum());
+                    composer.setText(music.getComposer());
 
                     dialogPlus.show();
 
@@ -92,26 +93,26 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ArtistaViewH
                         @Override
                         public void onClick(View view) {
                             Map<String, Object> map = new HashMap<>();
-                            map.put("nome", nome.getText().toString());
-                            map.put("idade", Integer.parseInt(idade.getText().toString()));
-                            map.put("biografia", biografia.getText().toString());
-                            map.put("genero", genero.getText().toString());
+                            map.put("musicName", musicName.getText().toString());
+                            map.put("genre", genre.getText().toString());
+                            map.put("album", album.getText().toString());
+                            map.put("composer", composer.getText().toString());
 
-                            String artistKey = list.get(position).getId();
+                            String musicKey = list.get(position).getId_music();
 
-                            FirebaseDatabase.getInstance().getReference("artists")
-                                    .child(artistKey).updateChildren(map)
+                            FirebaseDatabase.getInstance().getReference("musics")
+                                    .child(musicKey).updateChildren(map)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            Toast.makeText(holder.Nome.getContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(holder.musicName.getContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
                                             dialogPlus.dismiss();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(holder.Nome.getContext(), "Error While Updating.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(holder.musicName.getContext(), "Error While Updating.", Toast.LENGTH_SHORT).show();
                                             dialogPlus.dismiss();
                                         }
                                     });
@@ -120,58 +121,59 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.ArtistaViewH
                     });
 
                 } else {
-                    Log.e("ArtistaAdapter", "Error: Unable to get the activity context");
+                    Log.e("MusicaAdapter", "Error: Unable to get the activity context");
                 }
             }
         });
 
-        holder.btnDeleteArtist.setOnClickListener(new View.OnClickListener() {
+        holder.btnDeleteMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteArtist(artist.getId()); 
+                deleteMusic(music.getId_music());
             }
         });
     }
+
     @Override
     public int getItemCount() {
         return list.size();
     }
 
-    private void deleteArtist(String artistId) {
-        if (artistId != null && !artistId.isEmpty()) {
-            DatabaseReference artistRef = databaseReference.child(artistId);
+    private void deleteMusic(String musicId) {
+        if (musicId != null && !musicId.isEmpty()) {
+            DatabaseReference musicRef = databaseReference.child(musicId);
 
-            artistRef.removeValue()
+            musicRef.removeValue()
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(context, "Artista excluído com sucesso", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Música excluída com sucesso", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, "Falha ao excluir artista", Toast.LENGTH_SHORT).show();
-                            Log.e("ArtistaAdapter", "Error deleting Artist", e);
+                            Toast.makeText(context, "Falha ao excluir música", Toast.LENGTH_SHORT).show();
+                            Log.e("MusicaAdapter", "Error deleting Music", e);
                         }
                     });
         } else {
-            Log.e("ArtistaAdapter", "Error: artistId is null or empty");
+            Log.e("MusicaAdapter", "Error: musicId is null or empty");
         }
     }
-    public static class ArtistaViewHolder extends RecyclerView.ViewHolder {
-        TextView Id, Nome, Biografia, Idade, Genero;
-        Button btnEditArtist, btnDeleteArtist;
 
-        public ArtistaViewHolder(@NonNull View itemView) {
+    public static class MusicaViewHolder extends RecyclerView.ViewHolder {
+        TextView musicName, genre, album, composer;
+        Button btnEditMusic, btnDeleteMusic;
+
+        public MusicaViewHolder(@NonNull View itemView) {
             super(itemView);
-            Id = itemView.findViewById(R.id.txtIdArtist);
-            Nome = itemView.findViewById(R.id.txtNomeArtist);
-            Biografia = itemView.findViewById(R.id.txtBiografiaArtist);
-            Idade = itemView.findViewById(R.id.txtIdadeArtist);
-            Genero = itemView.findViewById(R.id.txtGeneroArtist);
-            btnDeleteArtist = itemView.findViewById(R.id.btnDeleteArtist);
-            btnEditArtist = itemView.findViewById(R.id.btnEditArtist);
+            musicName = itemView.findViewById(R.id.txtMusicName);
+            genre = itemView.findViewById(R.id.txtMusicGenre);
+            album = itemView.findViewById(R.id.txtMusicAlbum);
+            composer = itemView.findViewById(R.id.txtMusicComposer);
+            btnDeleteMusic = itemView.findViewById(R.id.btnDeleteMusic);
+            btnEditMusic = itemView.findViewById(R.id.btnEditMusic);
         }
     }
 }
