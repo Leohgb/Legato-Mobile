@@ -5,8 +5,8 @@
 Briefly describe the purpose and functionality of the project.
 
 ## Table of Contents
-
-- [Artist CRUD Operations](#artist-crud-operations)
+## CRUD Operations
+- [Artist ](#artist-crud-operations)
 - [Music](#music)
 - [User](#user)
 - [Post](#post)
