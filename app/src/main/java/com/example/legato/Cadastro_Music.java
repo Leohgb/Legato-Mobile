@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Cadastro_Musica extends AppCompatActivity {
+public class Cadastro_Music extends AppCompatActivity {
     private static final String APP_LEGATO = "APP_LEGATO";
     FirebaseAuth mAuth;
     EditText txtNome;
