@@ -29,7 +29,7 @@ public class Cadastro_Musica extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_musica);
+        setContentView(R.layout.cadastro_music);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("this_is_the_path_for_music");
 
@@ -83,7 +83,7 @@ public class Cadastro_Musica extends AppCompatActivity {
         String musicId = databaseReference.push().getKey();
 
         if (musicId != null) {
-            Intent intent = new Intent(Cadastro_Musica.this, ListMusics.class);
+            Intent intent = new Intent(Cadastro_Music.this, ListMusics.class);
             startActivity(intent);
             music.setId_music(musicId);
         } else {
