@@ -29,12 +29,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaViewHolder> {
+public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicaViewHolder> {
     private Context context;
     private List<Music> list;
     private DatabaseReference databaseReference;
 
-    public MusicaAdapter(Context context, List<Music> list, DatabaseReference databaseReference) {
+    public MusicAdapter(Context context, List<Music> list, DatabaseReference databaseReference) {
         this.context = context;
         this.list = list;
         this.databaseReference = databaseReference;
@@ -42,13 +42,13 @@ public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaView
 
     @NonNull
     @Override
-    public MusicaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MusicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_musicas, parent, false);
-        return new MusicaViewHolder(view);
+        return new MusicViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MusicaAdapter.MusicaViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull MusicAdapter.MusicViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Music music = list.get(position);
 
         holder.musicName.setText(music.getMusicName());
@@ -121,7 +121,7 @@ public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaView
                     });
 
                 } else {
-                    Log.e("MusicaAdapter", "Error: Unable to get the activity context");
+                    Log.e("MusicAdapter", "Error: Unable to get the activity context");
                 }
             }
         });
@@ -154,19 +154,19 @@ public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaView
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Toast.makeText(context, "Falha ao excluir música", Toast.LENGTH_SHORT).show();
-                            Log.e("MusicaAdapter", "Error deleting Music", e);
+                            Log.e("MusicAdapter", "Error deleting Music", e);
                         }
                     });
         } else {
-            Log.e("MusicaAdapter", "Error: musicId is null or empty");
+            Log.e("MusicAdapter", "Error: musicId is null or empty");
         }
     }
 
-    public static class MusicaViewHolder extends RecyclerView.ViewHolder {
+    public static class MusicViewHolder extends RecyclerView.ViewHolder {
         TextView musicName, genre, album, composer;
         Button btnEditMusic, btnDeleteMusic;
 
-        public MusicaViewHolder(@NonNull View itemView) {
+        public MusicViewHolder(@NonNull View itemView) {
             super(itemView);
             musicName = itemView.findViewById(R.id.txtMusicName);
             genre = itemView.findViewById(R.id.txtMusicGenre);
